@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  WELCOME
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .p3{
+    padding-top: 3rem;
+  }
+</style>
+
+<div class="container p3">
+
+  {% if user.is_authenticated %}
+    
+  <h1>
+    WELCOME
+  </h1>
+
+  <br>
+    <h1>
+      Hello {{ user.first_name }} {{ user.last_name }}
+    </h1>
+
+    <br>
+
+    <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
+
+
+  {% else %}
+
+    <h2>
+      Please <a href="{% url 'login' %}">Login</a> to see your details.
+    </h2>
+
+    <h2>
+      Not registered? <a href="{% url 'signup' %}">Register</a> here
+    </h2>
+    
+  {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %} Sign Up {% endblock %}
+
+{% block content %}
+
+<style>
+  .p3{
+    padding-top: 3rem !important;
+  }
+</style>
+
+<div class="container p3">
+
+  <form action="{% url 'signup' %}" method="POST">
+
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">FIRST NAME</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name = "first_name" placeholder="JOHN">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">LAST NAME</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name = "last_name" placeholder="DOE">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">username</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name = "username" placeholder="DOE">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" name="email">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleFormControlInput1" name="password">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
+      <input type="password" class="form-control" id="exampleFormControlInput1" name="password2">
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Submit</button>
+
+  </form>
+</div>
+
+{% endblock %}
