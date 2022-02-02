@@ -88,14 +88,32 @@ WSGI_APPLICATION = 'base.wsgi.application'
     }
 }'''
 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'CRUD SALT',
+#         'USER': 'hbp',
+#         'PASSWORD': 'AAd!tyAA$ravi',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+NAME = os.environ.get('NAME')
+DB_USER = os.environ.get('DB_USER')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+HOST = os.environ.get('HOST')
+PORT = os.environ.get('PORT')
+print(DB_PASSWORD)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'CRUD SALT',
-        'USER': 'hbp',
-        'PASSWORD': 'AAd!tyAA$ravi',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': HOST,
+        'PORT': PORT,
     }
 }
 
