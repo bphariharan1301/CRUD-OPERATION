@@ -12,38 +12,40 @@
 
 <div class="container p3">
 
+  {% include 'partials/_alerts.html' %}
+
   <form action="{% url 'signup' %}" method="POST">
 
     {% csrf_token %}
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">FIRST NAME</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" name = "first_name" placeholder="JOHN">
+      <input type="text" class="form-control" id="exampleFormControlInput1" name = "first_name" placeholder="JOHN" required>
     </div>
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">LAST NAME</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" name = "last_name" placeholder="DOE">
+      <input type="text" class="form-control" id="exampleFormControlInput1" name = "last_name" placeholder="DOE" required>
     </div>
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">username</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" name = "username" placeholder="DOE">
+      <input type="text" class="form-control" id="exampleFormControlInput1" name = "username" placeholder="DOE" required>
     </div>
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Email Address</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" name="email">
+      <input type="email" class="form-control" id="exampleFormControlInput1" name="email" required>
     </div>
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleFormControlInput1" name="password">
+      <input type="password" class="form-control" id="exampleFormControlInput1" name="password" required>
     </div>
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
-      <input type="password" class="form-control" id="exampleFormControlInput1" name="password2">
+      <input type="password" class="form-control" id="exampleFormControlInput1" name="password2" required>
     </div>
 
     <button type="submit" class="btn btn-secondary">Submit</button>

@@ -8,6 +8,8 @@
   }
 </style>
 
+{% include 'partials/_alerts.html' %}
+
 <div class="container p3">
   <form action="{% url 'login' %}" method="POST">
 
@@ -15,11 +17,11 @@
     
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Username</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="john123" name="username">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="john123" name="username" required>
     </div>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleFormControlInput1" name="password">
+      <input type="password" class="form-control" id="exampleFormControlInput1" name="password" required>
     </div>
     <button type="submit" class="btn btn-secondary">Submit</button>
 
